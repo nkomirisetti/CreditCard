@@ -107,12 +107,27 @@
 #modalWindow {
 	background-color: #DDE9ED;
 	border: 3px solid blue;
-	display: none; /*none Hidden by default */
+	display: block; /*none Hidden by default */
     position: fixed; /* Stay in place */
     margin: auto;
     z-index: 1; /* Sit on top */
     width: 50%;
 }
+
+#modalImageDiv {
+	float: left;
+	width: 40%;
+}
+
+#modalApplyDiv{
+	float: right;
+	width: 40%;
+}
+
+#modalInfoDiv {
+	
+}
+
 #content{
 
 
