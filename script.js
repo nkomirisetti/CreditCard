@@ -232,16 +232,36 @@ function populateCardList(){
             document.getElementById("modalNormal").textContent =
             "Normal APR: Non-variable rate at " + card.regular_apr.rate + "%";
           }
-          if (card.rates_and_fees.length = 1){
-            if(card.rates_and_fees[0].name == "annual"){
+
+          if (card.rates_and_fees.length == 1){
               if(card.rates_and_fees[0].fee == 0){
                 document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee";
+              } else if (card.rates_and_fees[0].caveat == ""){
+                document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+                + card.rates_and_fees[0].fee + ".";
+              } else {
+                document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+                + card.rates_and_fees[0].fee + " and " + card.rates_and_fees[0].caveat;
               }
+          } else {
+            if(card.rates_and_fees[0].fee == 0){
+              document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee. ";
+            } else if (card.rates_and_fees[0].caveat == ""){
+              document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+              + card.rates_and_fees[0].fee + ". ";
+            } else {
+              document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+              + card.rates_and_fees[0].fee + " and " + card.rates_and_fees[0].caveat +". ";
             }
-          }
+
+            document.getElementById("modalRates").textContent += card.rates_and_fees[1].name + " at rate of " +
+            card.rates_and_fees[1].rate + " for duration of " + card.rates_and_fees[1].duration_months + " months.";
+
+          };
+        };
 
 
-          document.getElementById("modalRates").textContent =
+
 
           modalWindow.style.display = "block";
 
