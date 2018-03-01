@@ -72,10 +72,7 @@ function setup(){
     document.getElementById("cashback").style.visibility = "hidden";
   }
 
-  var slider = document.getElementById('slideCreditScore');
-  slider.addEventListener("mouseover",function(){
-    this.textContent=getCreditScore();
-  });
+
 
   this.selectedCreditCards = this.creditCards;
   populateCardList();
@@ -255,4 +252,8 @@ function clearCardList(){
 function detailsButtonClick() {
     var modalWindow = document.getElementById('modalWindow');
     modalWindow.style.display = "block";
+}
+
+function updateCreditScore(){
+  document.getElementById("creditScoreLabel").textContent= document.getElementById("slideCreditScore").value.toString();
 }
