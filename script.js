@@ -180,10 +180,9 @@ function populateCardList(){
       ul.id = "cardList";
       var container = document.getElementById('cardListContainer').appendChild(ul);
       if (selectedCreditCards.length == 0){
-        // TODO show message that no cards are available with that critera, please broaden your search
         var noMatchesFoundText = document.createElement('li');
         noMatchesFoundText.id = "noMatchesFoundText";
-        noMatchesFoundText.innerHTML += "No Matches Found";
+        noMatchesFoundText.innerHTML += "No Matches Found, try broadening your filter";
         ul.appendChild(noMatchesFoundText);
       }
       this.selectedCreditCards.forEach(function(card){
@@ -279,9 +278,8 @@ function populateCardList(){
               card.name,
               enteredScore
             );
-
-            // return succ or fail
-          } else {
+          }
+          else {
               alert(enteredScore + " is not a valid credit score, please enter a non-decimal number between 300 and 850");
               ga('send','event',
                 'Cards',
@@ -298,7 +296,7 @@ function populateCardList(){
 
           modalWindow.style.display = "block";
 
-        };
+        //
 
 
       //detailsButton.onclick = "displayCardDetails()";
