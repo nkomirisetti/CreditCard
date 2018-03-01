@@ -383,10 +383,20 @@ function getCurrentMerchant() {
   return document.getElementById( "selectMerchant" ).value;
 }
 
+<<<<<<< HEAD
 function eventDetailsClick( cardname ) {
   ga( 'send', 'event',
     'Cards',
     'detailsClick',
     cardname
   );
+=======
+  function eventDetailsClick( cardname ) {
+    ga( 'send', 'event',
+      'Cards',
+      'detailsClick',
+      cardname
+    );
+  }
+>>>>>>> 84f52ab4dfa1abe5dbc9269371724d1647d9e6c7
 }
