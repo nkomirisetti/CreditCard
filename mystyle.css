@@ -1,11 +1,28 @@
 #container-full {
+	display: table;
 	border: 3px solid blue;
+	height: 5000px;
+}
+
+#display-row {
+	display: table-row;
 }
 
 #cardListAndModal {
+	display: table-cell;
+	position: relative;
+	float: right;
+	/*border: 3px solid red;*/
+}
+
+#sidebar{
+	vertical-align: top;
+	display: table-cell;
+	margin-left: 100px;
 	position: relative;
 	border: 3px solid red;
-	margin: auto;
+	max-width: 10%;
+	min-width: 142px;
 }
 
 #cardListContainer {
@@ -27,6 +44,7 @@
 
 #cardContainer {
 	/*border: 3px solid green;*/
+	background-color: #C1D5DB;
 	height: 250px;
 	/*height: 30%;*/
 
@@ -43,8 +61,8 @@
 
 #cardInfoContainer {
 	/*border: 3px solid blue;*/
-	margin-right: 3%;
-	width: 40%;
+	/*margin-right: 3%;*/
+	width: 50%;
 	float: right;
 	position: relative;
 	top: 50%;
@@ -52,19 +70,19 @@
 }
 
 #cardImage {
-	width: 100%;
+	width: 200px;
 	height: auto;
 }
 
 #cardInfoList {
+	float: left;
 	list-style-type: none;
 	font-family: 'Helvetica', 'Arial', sans-serif;
-	margin: auto;
-	width: 75%;
+	width: 100%;
 }
 
 #infoListElement {
-	font-size: 1.5em;
+	font-size: .85em;
 	color: #183C7A;
 	padding: 2%;
 }
@@ -92,27 +110,22 @@
 
 
 }
-#cardListAndModal{
-	float:right;
-}
-#sidebar{
-	position: relative;
-	border: 3px solid red;
-	max-width: 10%;
-	min-width: 142px;
-}
 
-aside {
-  flex: 3;
-}
+
+
+/*aside {
+  float: left;
+  position: relative;
+
+}*/
 
 main {
-  flex: 7;
+  //flex: 7;
 }
 
 /* Form styling */
 
-aside {
+/*aside {
   display: flex;
   flex-flow: column;
   align-items: stretch;
@@ -121,3 +134,4 @@ aside {
 aside div {
   margin-bottom: 20px;
 }
+*/
