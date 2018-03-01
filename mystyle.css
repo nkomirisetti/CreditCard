@@ -4,7 +4,7 @@
 	display: table;
 	border: 3px solid blue;
 	height: 5000px;
-	width: 800px;
+	width: 870px;/*here to get rid of overlap*/
 }
 
 #display-row {
@@ -20,7 +20,9 @@
 }
 
 #sidebar{
-
+	color: #183C7A;
+    font-family: "Open Sans",sans-serif;
+	font-size: .8em;
 	position: fixed;
 	border-radius: 7px;
 	border: 3px solid #89979C;
@@ -39,8 +41,8 @@
 #cardListContainer {
 /*	border: 3px solid red;*/
 
-	width: 648px;
-	max-width: 648px;
+	width: 700px;
+	/*max-width: 648px;*/
 	overflow: auto;
 }
 
@@ -57,7 +59,7 @@
 #cardContainer {
 	border-radius: 7px;
 	margin-bottom: 20px;
-
+	/*width: 608px;*/
 	border: 3px solid #89979C;
 	background-color: #C1D5DB;
 	height: 250px;
@@ -76,9 +78,9 @@
 
 #cardInfoContainer {
 	/*border: 3px solid blue;*/
-	margin-right: 50px;
-	/*width: 50%;*/
-	max-width: 50%;
+	margin-right: 0px;
+	width: 330px;
+	/*max-width: 50%*/;
 	float: right;
 	position: relative;
 	top: 50%;
@@ -86,22 +88,26 @@
 }
 
 #cardImage {
-	width: 200px;
+	width: 280px;
 	height: auto;
+	margin-left: 15px;
 }
 
 #cardInfoList {
-	margin-right: 30px;
+	/*margin-right: 30px;*/
 	/*border: 3px solid red;*/
 	float: left;
 	list-style-type: none;
-	font-family: 'Helvetica', 'Arial', sans-serif;
-	width: 300px;
+	/*font-family: 'Helvetica', 'Arial', sans-serif;*/
+	font-family: "Open Sans",sans-serif;
+
+	width: 220px;
 }
 
 #infoListElement {
 	/*border: 3px solid blue;*/
-	font-size: .85em;
+	float: left;
+	font-size: .95em;
 	color: #183C7A;
 	padding: 2%;
 }
@@ -117,11 +123,12 @@
 }
 
 #modalWindow {
+	width: 690px;
 	border-radius: 7px;
-
-	background-color: #DDE9ED;
-	border: 3px solid blue;
-	display: none; /*none Hidden by default */
+	border: 3px solid #89979C;
+	background-color: #C1D5DB;
+	/*background-color: #DDE9ED;*/
+	display: none; /*none block Hidden by default */
     position: fixed; /* Stay in place */
     /*margin: auto;*/
     margin-left: auto; 
@@ -133,31 +140,34 @@
 }
 
 #modalImageAndApply {
-	border: 3px solid blue;
+	border: 3px solid #89979C;
+	border: 3px solid green;
 	height: 250px;
 }
 
 #modalImageDiv {
-	border: 3px solid green;
+	border: 3px solid red;
 
 	float: left;
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	/*top: 50%;
+	transform: translateY(-50%);*/
 	margin-left: 30px;
 	/*width: 50%;*/
 }
 
 #modalApplyDiv{
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	border: 3px solid red;
+	/*top: 50%;
+	transform: translateY(-50%);*/
+	margin-top: 70px;
+	margin-right: 20px;
 	float: right;
 	width: 40%;
 }
 
 #modalApplyButton {
+	float: right;
 	background-color: #F2ED50;
 	color: white;
 	text-align: center;
@@ -169,6 +179,8 @@
 }
 
 #modalInfoDiv {
+	border: 3px solid #89979C;
+
 	color: #183C7A;
 }
 
@@ -189,6 +201,20 @@
     color: #afafaf;
     text-decoration: none;
     cursor: pointer;
+}
+
+#modalCardName {
+	font-family: 'Arial Black', 'Arial', sans-serif;
+	font-size: 1.5em;
+	border: 3px solid red;
+	margin-left: 20px;
+	/*text-align: center;*/
+}
+
+#noMatchesFoundText{
+	font-family: 'Arial Black', 'Arial', sans-serif;
+	font-size: 2em;
+	text-align: center;
 }
 
 #content{
