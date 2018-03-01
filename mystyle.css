@@ -1,4 +1,5 @@
 #container-full {
+	margin-left: 75px;
 	display: table;
 	border: 3px solid blue;
 	height: 5000px;
@@ -107,7 +108,7 @@
 #modalWindow {
 	background-color: #DDE9ED;
 	/*border: 3px solid blue;*/
-	display: block; /*none Hidden by default */
+	display: none; /*none Hidden by default */
     position: fixed; /* Stay in place */
     margin: auto;
     z-index: 1; /* Sit on top */
