@@ -29,6 +29,8 @@ function setup(){
     // main region where we will populate the Cards
     var main = document.querySelector('main');
 
+
+
     // add options based on options from API
     var merchantSelect = document.getElementById("selectMerchant");
     for (var i = 0; i < this.creditCards.length; i++){
@@ -69,6 +71,11 @@ function setup(){
   if(cardTags.includes("cashback") == false){
     document.getElementById("cashback").style.visibility = "hidden";
   }
+
+  var slider = document.getElementById('creditScoreLabel');
+  slider.addEventListener("mouseover",function(){
+    this.textContent=getCreditScore();
+  });
 
   this.selectedCreditCards = this.creditCards;
   populateCardList();
@@ -248,8 +255,4 @@ function clearCardList(){
 function detailsButtonClick() {
     var modalWindow = document.getElementById('modalWindow');
     modalWindow.style.display = "block";
-}
-
-function updateSliderLabel(){
-  document.getElementById('creditScoreLabel').textContent = getCreditScore().toString();
 }
