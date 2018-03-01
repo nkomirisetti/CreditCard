@@ -63,6 +63,7 @@
   /*	border: 3px solid red;*/
   width: 700px;
   /*max-width: 648px;*/
+  height = 90%
   overflow: auto;
 }
 
@@ -81,7 +82,7 @@
   /*width: 608px;*/
   border: 3px solid #89979C;
   background-color: #C1D5DB;
-  height: 250px;
+  height: 270px;
   /*height: 30%;*/
 }
 
@@ -99,7 +100,8 @@
   margin-right: 0px;
   width: 330px;
   /*max-width: 50%*/
-  ;
+
+  height: 60%;
   float: right;
   position: relative;
   top: 50%;
@@ -185,11 +187,13 @@
 }
 
 #modalFeaturesDiv {
+  
+  overflow: scroll;
   float: right;
   position: relative;
   width: 320px;
   height: 240px;
-  /*border: 3px solid blue;*/
+  border: 3px solid #89979C;
 }
 
 #modalFeaturesText {
