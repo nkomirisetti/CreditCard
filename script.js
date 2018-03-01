@@ -216,6 +216,9 @@ function populateCardList(){
           eventDetailsClick(card.name);
           var modalWindow = document.getElementById('modalWindow');
           document.getElementById("modalImage").src = card.image;
+          document.getElementById("modalCreditRange").textContent = "Credit Score Range: "
+          + card.recommended_credit_scores[0].min
+          + " to " + card.recommended_credit_scores[card.recommended_credit_scores.length-1].max;
           document.getElementById("modalMerchant").textContent = "Merchant: "
           + card.merchant;
           if (card.intro_apr.does_not_apply == false){
@@ -229,6 +232,17 @@ function populateCardList(){
             document.getElementById("modalNormal").textContent =
             "Normal APR: Non-variable rate at " + card.regular_apr.rate + "%";
           }
+          if (cards.rates_and_fees.length = 1){
+            if(cards.rates_and_fees[0].name == "annual"){
+              if(cards.rates_and_fees[0].fee == 0){
+                document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee"
+              }
+            }
+          }
+
+
+          document.getElementById("modalRates").textContent =
+
           modalWindow.style.display = "block";
 
         };
