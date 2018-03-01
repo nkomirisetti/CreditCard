@@ -225,23 +225,37 @@ function populateCardList() {
 
     var merchant = document.createElement( 'li' );
     merchant.id = "infoListElement";
+
     var cardName = document.createElement( 'li' );
     cardName.id = "infoListElement";
+
     var tags = document.createElement( 'li' );
     tags.id = "infoListElement";
+
     var buttonHolder = document.createElement( 'li' );
     buttonHolder.id = "infoListElement";
+
     var detailsButton = document.createElement( 'button' );
     detailsButton.id = card.id;
+
+    //creates modal on click for
     detailsButton.onclick = function() {
       eventDetailsClick( card.name );
       var modalWindow = document.getElementById( 'modalWindow' );
+
+      // sets title of modal window
       document.getElementById( "modalCardName" ).innerHTML = card.name.bold();
+
+      // adds features as lists by looping through features array
       document.getElementById( "modalFeaturesText" ).innerHTML = "Features:".bold() + "<br>";
       for ( var i = 0; i < card.features.length; i++ ) {
         document.getElementById( "modalFeaturesText" ).innerHTML += card.features[ i ] + "<br>";
       }
+
+      // loads image into modal
       document.getElementById( "modalImage" ).src = card.image;
+
+      // shows range of credit scores by grabbing lowest and highest
       document.getElementById( "modalCreditRange" ).innerHTML = "Credit Score Range: ".bold() +
         card.recommended_credit_scores[ 0 ].min +
         " to " + card.recommended_credit_scores[ card.recommended_credit_scores.length - 1 ].max;
