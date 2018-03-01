@@ -33,8 +33,12 @@
       <form>
         <div>
           <p>Merchant</p>
-          <select id="selectMerchant" onchange="return generalUpdate()" onclick="return merchantEvent()">
-            <option  value="all merchants">All Merchants</option>
+          <select id="selectMerchant" onchange="return generalUpdate()" onclick="ga('send','event',
+            'Filters',
+            'merchantSelect',
+            selectMerchant.value
+          );">
+            <option value="all merchants">All Merchants</option>
           </select>
         </div>
         <p>Credit Score</p>

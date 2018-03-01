@@ -285,7 +285,7 @@ function getCurrentMerchant(){
 }
 
 function merchantEvent(){
-  ga('send', {
+ga('send', {
   hitType: 'event',
   eventCategory: 'Filters',
   eventAction: 'merchantSelect',
