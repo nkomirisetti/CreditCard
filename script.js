@@ -116,6 +116,7 @@ function tagUpdate(){
       tagFilteredCards.push(this.selectedCreditCards[i]);
     }
   }
+  clearCardList();
   this.selectedCreditCards = tagFilteredCards;
   console.log(selectedCreditCards.length);
   populateCardList();
