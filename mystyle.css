@@ -3,6 +3,7 @@
 	display: table;
 	border: 3px solid blue;
 	height: 5000px;
+	width: 800px;
 }
 
 #display-row {
@@ -17,12 +18,15 @@
 }
 
 #sidebar{
-	vertical-align: top;
+	position: fixed;
+	/*vertical-align: top;*/
+	height: 300px;
+	width: 170;
 	display: table-cell;
-	position: relative;
+	/*position: relative;*/
 	border: 3px solid red;
-	max-width: 10%;
-	min-width: 142px;
+	/*max-width: 10%;
+	min-width: 142px;*/
 }
 
 #cardListContainer {
