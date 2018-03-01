@@ -1,15 +1,16 @@
 #container-full {
-	min-width: 800px;
-	margin-left: 30px;
-	display: table;
-	/*border: 3px solid blue;*/
-	height: 5000px;
-	width: 870px;/*here to get rid of overlap*/
+  min-width: 800px;
+  margin-left: 30px;
+  display: table;
+  /*border: 3px solid blue;*/
+  height: 5000px;
+  width: 870px;
+  /*here to get rid of overlap*/
 }
 
 #headerImage {
-	height: 100%;
-	width: relative;
+  height: 100%;
+  width: relative;
 }
 
 /*#pageHeaderRow {
@@ -18,278 +19,265 @@
 }*/
 
 #pageHeader {
-	text-align: center;
-	font-size: 2em;
-	/*border: 3px solid red;*/
-	/*background-color: red;*/
-	height: 180px;
-	width: 100%;
+  text-align: center;
+  font-size: 2em;
+  /*border: 3px solid red;*/
+  /*background-color: red;*/
+  height: 180px;
+  width: 100%;
 }
 
 #display-row {
-	min-width: 800px;
-	display: table-row;
+  min-width: 800px;
+  display: table-row;
 }
 
 #cardListAndModal {
-	display: table-cell;
-	position: relative;
-	float: right;
-	/*border: 3px solid red;*/
+  display: table-cell;
+  position: relative;
+  float: right;
+  /*border: 3px solid red;*/
 }
 
-#sidebar{
-	margin-top: 120px;
-	color: #183C7A;
-    font-family: "Open Sans",sans-serif;
-	font-size: .8em;
-	position: fixed;
-	border-radius: 7px;
-	border: 3px solid #89979C;
-
-	background-color: #C1D5DB;
-	/*vertical-align: top;*/
-	height: 300px;
-	width: 170;
-	display: table-cell;
-	/*position: relative;*/
-	/*border: 3px solid red;*/
-	/*max-width: 10%;
+#sidebar {
+  margin-top: 120px;
+  color: #183C7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: .8em;
+  position: fixed;
+  border-radius: 7px;
+  border: 3px solid #89979C;
+  background-color: #C1D5DB;
+  /*vertical-align: top;*/
+  height: 300px;
+  width: 170;
+  display: table-cell;
+  /*position: relative;*/
+  /*border: 3px solid red;*/
+  /*max-width: 10%;
 	min-width: 142px;*/
 }
 
 #cardListContainer {
-/*	border: 3px solid red;*/
-
-	width: 700px;
-	/*max-width: 648px;*/
-	overflow: auto;
+  /*	border: 3px solid red;*/
+  width: 700px;
+  /*max-width: 648px;*/
+  overflow: auto;
 }
 
 #cardList {
-	list-style-type: none;
-
+  list-style-type: none;
 }
 
-#cardListElement{
-	list-style-type: none;
-	/*border: 3px solid red;*/
+#cardListElement {
+  list-style-type: none;
+  /*border: 3px solid red;*/
 }
 
 #cardContainer {
-	border-radius: 7px;
-	margin-bottom: 20px;
-	/*width: 608px;*/
-	border: 3px solid #89979C;
-	background-color: #C1D5DB;
-	height: 250px;
-	/*height: 30%;*/
-
+  border-radius: 7px;
+  margin-bottom: 20px;
+  /*width: 608px;*/
+  border: 3px solid #89979C;
+  background-color: #C1D5DB;
+  height: 250px;
+  /*height: 30%;*/
 }
 
 #cardImageContainer {
-	/*border: 3px solid red;*/
-	margin-left: 5px;
-	float: left;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+  /*border: 3px solid red;*/
+  margin-left: 5px;
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #cardInfoContainer {
-	/*border: 3px solid blue;*/
-	margin-right: 0px;
-	width: 330px;
-	/*max-width: 50%*/;
-	float: right;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+  /*border: 3px solid blue;*/
+  margin-right: 0px;
+  width: 330px;
+  /*max-width: 50%*/
+  ;
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #cardImage {
-	width: 280px;
-	height: auto;
-	margin-left: 15px;
+  width: 280px;
+  height: auto;
+  margin-left: 15px;
 }
 
 #cardInfoList {
-	/*margin-right: 30px;*/
-	/*border: 3px solid red;*/
-	float: left;
-	list-style-type: none;
-	/*font-family: 'Helvetica', 'Arial', sans-serif;*/
-	font-family: "Open Sans",sans-serif;
-
-	width: 220px;
+  /*margin-right: 30px;*/
+  /*border: 3px solid red;*/
+  float: left;
+  list-style-type: none;
+  /*font-family: 'Helvetica', 'Arial', sans-serif;*/
+  font-family: "Open Sans", sans-serif;
+  width: 220px;
 }
 
 #infoListElement {
-	/*border: 3px solid blue;*/
-	float: left;
-	font-size: .95em;
-	color: #183C7A;
-	padding: 2%;
+  /*border: 3px solid blue;*/
+  float: left;
+  font-size: .95em;
+  color: #183C7A;
+  padding: 2%;
 }
 
-#cardDetailsButton{
-	background-color: #183C7A;
-	color: white;
-	text-align: center;
-  	text-decoration: none;
-  	border: none;
-  	border-radius: 15px;
-  	font-size: 1em;
+#cardDetailsButton {
+  background-color: #183C7A;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  font-size: 1em;
 }
 
 #modalWindow {
-	width: 720px;
-	border-radius: 7px;
-	border: 3px solid #89979C;
-	background-color: #C1D5DB;
-	/*background-color: #DDE9ED;*/
-	display: none; /*none block Hidden by default */
-    position: fixed; /* Stay in place */
-    /*margin: auto;*/
-    margin-left: auto; 
-    margin-right: auto;
-    /*margin-top: 10px;*/
-
-    z-index: 1; /* Sit on top */
+  width: 720px;
+  border-radius: 7px;
+  border: 3px solid #89979C;
+  background-color: #C1D5DB;
+  /*background-color: #DDE9ED;*/
+  display: none;
+  /*none block Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  /*margin: auto;*/
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-top: 10px;*/
+  z-index: 1;
+  /* Sit on top */
 }
 
 #modalImageAndFeatures {
-	/*border: 3px solid #89979C;*/
-	/*border: 3px solid green;*/
-	height: 250px;
+  /*border: 3px solid #89979C;*/
+  /*border: 3px solid green;*/
+  height: 250px;
 }
 
 #modalImageDiv {
-	/*border: 3px dotted red;*/
-
-	float: left;
-	position: relative;
-	/*top: 50%;
+  /*border: 3px dotted red;*/
+  float: left;
+  position: relative;
+  /*top: 50%;
 	transform: translateY(-50%);*/
-	margin-left: 15px;
-	width: 50%;
+  margin-left: 15px;
+  width: 50%;
 }
 
 #modalCardNameImageFeatures {
-	/*border: 3px solid #89979C;*/
+  /*border: 3px solid #89979C;*/
 }
 
 #modalImage {
-	width: 320px;
-	height: auto;
-	margin-left: 15px;
+  width: 320px;
+  height: auto;
+  margin-left: 15px;
 }
 
 #modalFeaturesDiv {
-	float: right;
-	position: relative;
-	width: 320px;
-	height: 240px;
-	/*border: 3px solid blue;*/
+  float: right;
+  position: relative;
+  width: 320px;
+  height: 240px;
+  /*border: 3px solid blue;*/
 }
 
 #modalFeaturesText {
-	font-family: "Open Sans",sans-serif;
-
-	font-size: 1em;
-	/*border: 3px dotted blue;*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  /*border: 3px dotted blue;*/
 }
 
 #modalDetailsAndApply {
-	/*border: 3px solid green;*/
-	width: 100%;
+  /*border: 3px solid green;*/
+  width: 100%;
 }
 
 #modalDetailsDiv {
-	/*border: 3px solid red;*/
-	width: 45%;
-	float: left;
+  /*border: 3px solid red;*/
+  width: 45%;
+  float: left;
 }
 
 #modalDetailsList {
-	font-family: "Open Sans",sans-serif;
-
+  font-family: "Open Sans", sans-serif;
 }
 
-#modalApplyDiv{
-	/*border: 3px solid blue;*/
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin-top: 70px;
-	margin-right: 90px;
-	float: right;
-	width: 25%;
+#modalApplyDiv {
+  /*border: 3px solid blue;*/
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 70px;
+  margin-right: 90px;
+  float: right;
+  width: 25%;
 }
 
 #modalApplyButton {
-	float: right;
-	background-color: #F2ED50;
-	color: white;
-	text-align: center;
-  	text-decoration: none;
-  	border: none;
-  	border-radius: 1px;
-  	font-size: 2em;
-	font-family: "Open Sans",sans-serif;
+  float: right;
+  background-color: #F2ED50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 1px;
+  font-size: 2em;
+  font-family: "Open Sans", sans-serif;
 }
 
 #modalInfoDiv {
-	/*border: 3px solid #89979C;*/
-
-	color: #183C7A;
+  /*border: 3px solid #89979C;*/
+  color: #183C7A;
 }
 
 #modalImageAndFeatures {
-	/*border: 3px solid red;*/
-
-/*	font-family: 'Arial Black', 'Arial', sans-serif;
-*/	
-	font-size: 1em;
-	float: right;
-	margin-right: 0px;
-	margin-top: 0px;
+  /*border: 3px solid red;*/
+  /*	font-family: 'Arial Black', 'Arial', sans-serif;
+*/
+  font-size: 1em;
+  float: right;
+  margin-right: 0px;
+  margin-top: 0px;
 }
+
 #modalCloseX {
-	margin-right: 10px;
-	float: right;
-    font-size: 28px;
-    font-weight: bold;
+  margin-right: 10px;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-#modalCloseX:hover,
-#modalCloseX:focus {
-    color: #afafaf;
-    text-decoration: none;
-    cursor: pointer;
+#modalCloseX:hover, #modalCloseX:focus {
+  color: #afafaf;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #modalCardName {
-    font-family: "Open Sans",sans-serif;
-	font-size: 1.5em;
-	/*border: 3px solid red;*/
-	margin-left: 20px;
-
-	/*text-align: center;*/
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  /*border: 3px solid red;*/
+  margin-left: 20px;
+  /*text-align: center;*/
 }
 
-#noMatchesFoundText{
-    font-family: "Open Sans",sans-serif;
-	font-size: 2em;
-	text-align: center;
+#noMatchesFoundText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  text-align: center;
 }
 
-#content{
-
-
-}
-
-
+#content {}
 
 /*aside {
   float: left;
