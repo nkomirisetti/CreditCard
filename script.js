@@ -115,7 +115,8 @@ function tagUpdate(){
     }
   }
   this.selectedCreditCards = tagFilteredCards;
-  console.log(selectedCreditCards.length)
+
+  select
 }
 
 
