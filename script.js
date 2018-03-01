@@ -231,6 +231,11 @@ window.onload = function() {
 
 };
 
+function clearCardList(){
+    var parent = document.getElementById("cardListContainer");
+    var child = document.getElementById("cardList");
+    parent.removeChild(child);
+}
 
 
 // var detailsButton = document.getElementById('cardDetailsButton');
