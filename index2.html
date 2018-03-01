@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<script type="text/javascript" src="./cardListAndModal.js"></script>
+	<title>Card Project</title>
+	</head>
+	<body>
+	<div id="header"></div>
+		<div id="cardListAndModal">
+			<div id="modalWindow">
+				<div id="modalContent">
+					<div id="modalImageDiv">
+						<img id="modalImage" src="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8blm_trvsigcm_v_250x158.png">
+					</div>
+					<div id="modalInfoDiv">
+						<ul>
+							<li>Vendor: </li>
+							<li>Credit Range: </li>
+							<li>Intro APR: </li>
+							<li>Normal APR: </li>
+							<li>Rates + Fees: </li>
+							<li>Features: </li>
+						</ul>
+					</div>
+					<div id="modalApplyDiv">
+						<button id="modalApplyButton">Apply</button>
+					</div>
+				</div>
+			</div>
+			<div id="cardListContainer"><script src="cardListAndModal.js"></script></div>
+		</div>
+		
+		<!--		<script>
+			function displayCardDetails(){//cardType){
+				var modalDiv = document.createElement('div');
+				modalDiv.id = "modalDiv";
+
+				var modalContent = document.createElement('div');
+				modalContent.id = "modalContent";
+
+				var modalImageDiv = document.createElement('div');
+				modalImageDiv.id = "modalImageDiv";
+
+				var modalApplyDiv = document.createElement('div');
+				modalApplyDiv.id = "modalApplyDiv";
+
+				var modalInfoDiv = document.createElement('div');
+				modalInfoDiv.id = "modalInfoDiv";
+
+				var modalImage = document.createElement('img');
+				modalImage.setAttribute('src', 'https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8blm_trvsigcm_v_250x158.png');
+				modalImageDiv.appendChild(modalImage);
+
+				var modalInfoList = document.createElement('ul');
+				modalInfoList.id = "modalInfoList";
+
+				var modalListVendor = document.createElement('li');
+				modalListVendor.id = "modalListVendor";
+				var modalListCredit = document.createElement('li');
+				modalListCredit.id = "modalListItem";
+				var modalListIntroAPR = document.createElement('li');
+				modalListIntroAPR.id = "modalListItem";
+				var modalListNormalAPR = document.createElement('li');
+				modalListNormalAPR.id = "modalListItem";
+				var modalListRatesFees = document.createElement('li');
+				modalListRatesFees.id = "modalListItem";
+				var modalListFeatures = document.createElement('li');
+				modalListFeatures.id = "modalListItem";
+
+				modalInfoList.appendChild(modalListVendor);
+				modalInfoList.appendChild(modalListCredit);
+				modalInfoList.appendChild(modalListIntroAPR);
+				modalInfoList.appendChild(modalListNormalAPR);
+				modalInfoList.appendChild(modalListRatesFees);
+				modalInfoList.appendChild(modalListFeatures);
+				modalListVendor.innerHTML += "Vendor:";
+				modalListCredit.innerHTML += "Credit:";
+				modalListIntroAPR.innerHTML += "Intro APR:";
+				modalListNormalAPR.innerHTML += "Normal APR:";
+				modalListRatesFees.innerHTML += "Rates and Fees:";
+				modalListFeatures.innerHTML += "Features:";
+				modalInfoDiv.appendChild(modalInfoList);
+
+				var modalApplyButton = document.createElement('button');
+				modalApplyButton.id = "modualApplyButton";
+				modalApplyButton.innerHTML += "Apply";
+				modualApplyDiv.appendChild(modalApplyButton);
+
+				modalContent.appendChild(modalImageDiv);
+				modalContent.appendChild(modalInfoList);
+				modalContent.appendChild(modualApplyDiv);
+
+				modalDiv.appendChild(modalContent);
+
+				var cardListAndModal = document.getElementById('cardListAndModal');
+				cardListAndModal.appendChild(modalDiv);
+			}
+		</script>-->
+		
+	</body>
+</html>

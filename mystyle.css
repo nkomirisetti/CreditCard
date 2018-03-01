@@ -1,0 +1,116 @@
+#cardListAndModal {
+	border: 3px solid red;
+	margin: auto;
+}
+
+#cardListContainer {
+	width: 648px;
+	max-width: 648px;
+	overflow: auto;
+}
+
+#cardList {
+
+}
+
+#cardListElement{
+	list-style-type: none;
+	margin-top: 10px;
+	/*border: 3px solid red;*/
+	background-color: #DDE9ED;
+}
+
+#cardContainer {
+	/*border: 3px solid green;*/
+	height: 250px;
+	/*height: 30%;*/
+
+}
+
+#cardImageContainer {
+	/*border: 3px solid red;*/
+	margin-left: 5%;
+	float: left;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#cardInfoContainer {
+	/*border: 3px solid blue;*/
+	margin-right: 3%;
+	width: 40%;
+	float: right;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#cardImage {
+	width: 100%;
+	height: auto;
+}
+
+#cardInfoList {
+	list-style-type: none;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	margin: auto;
+	width: 75%;
+}
+
+#infoListElement {
+	font-size: 1.5em;
+	color: #183C7A;
+	padding: 2%;
+}
+
+#cardDetailsButton{
+	background-color: #183C7A;
+	color: white;
+	text-align: center;
+  	text-decoration: none;
+  	border: none;
+  	border-radius: 15px;
+  	font-size: 1em;
+}
+
+#modalWindow {
+	background-color: #DDE9ED;
+	border: 3px solid blue;
+	display: none; /*none Hidden by default */
+    position: fixed; /* Stay in place */
+    margin: auto;
+    z-index: 1; /* Sit on top */
+    width: 50%;
+}
+#content{
+
+
+}
+#cardListAndModal{
+	float:right;
+}
+#sidebar{
+	border: 3px solid red;
+	max-width: 10%;
+}
+
+aside {
+  flex: 3;
+}
+
+main {
+  flex: 7;
+}
+
+/* Form styling */
+
+aside {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+}
+
+aside div {
+  margin-bottom: 20px;
+}
