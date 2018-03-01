@@ -363,8 +363,6 @@ window.onload = function() {
   };
 }
 
-
-
 function updateCreditScore(){
   document.getElementById("creditScoreLabel").innerHTML= document.getElementById("slideCreditScore").value.toString().bold();
 }
