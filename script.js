@@ -72,7 +72,7 @@ function setup(){
     document.getElementById("cashback").style.visibility = "hidden";
   }
 
-  var slider = document.getElementById('creditScoreLabel');
+  var slider = document.getElementById('slideCreditScore');
   slider.addEventListener("mouseover",function(){
     this.textContent=getCreditScore();
   });
