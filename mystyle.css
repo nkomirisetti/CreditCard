@@ -1,10 +1,24 @@
 #container-full {
 	min-width: 800px;
-	margin-left: 75px;
+	margin-left: 30px;
 	display: table;
 	border: 3px solid blue;
 	height: 5000px;
 	width: 870px;/*here to get rid of overlap*/
+}
+
+/*#pageHeaderRow {
+	display: table-row;
+
+}*/
+
+#pageHeader {
+	text-align: center;
+	font-size: 2em;
+	border: 3px solid red;
+	background-color: red;
+	height: 200px;
+	width: 100%;
 }
 
 #display-row {
