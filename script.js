@@ -191,8 +191,6 @@ function populateCardList(){
       cardName.id = "infoListElement";
       var tags = document.createElement('li');
       tags.id = "infoListElement";
-      var features = document.createElement('li');
-      features.id = "infoListElement";
       var buttonHolder = document.createElement('li');
       buttonHolder.id = "infoListElement";
       var detailsButton = document.createElement('button');
@@ -208,12 +206,10 @@ function populateCardList(){
       cardInfoList.appendChild(merchant);
       cardInfoList.appendChild(cardName);
       cardInfoList.appendChild(tags);
-      cardInfoList.appendChild(features);
       cardInfoList.appendChild(buttonHolder);
       merchant.innerHTML += "Merchant: " + card.merchant;
       cardName.innerHTML += "Name: " + card.name;
       tags.innerHTML += "Tags: " + card.tags;
-      features.innerHTML += "Features: " + card.features;
       detailsButton.innerHTML = "Details";
 
 
