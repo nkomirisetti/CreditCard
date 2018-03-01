@@ -266,8 +266,8 @@ function populateCardList(){
 
             document.getElementById("modalRates").textContent = document.getElementById("modalRates").textContent+ card.rates_and_fees[1].name + " at rate of " +
             card.rates_and_fees[1].rate + " for duration of " + card.rates_and_fees[1].duration_months + " months.";
-
           };
+          modalWindow.style.display = "block";
         };
         document.getElementById("modalApplyButton").onclick = function(){
           var enteredScore = prompt("Please enter your credit score");
@@ -290,7 +290,7 @@ function populateCardList(){
           }
 
         };
-        
+
       //detailsButton.onclick = "displayCardDetails()";
       buttonHolder.appendChild(detailsButton);
       cardInfoList.appendChild(merchant);
