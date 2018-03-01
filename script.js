@@ -171,7 +171,7 @@ function getSelectedTags() {
 }
 // sends data to api
 function sendToAPI( creditCardNumber, creditScore ) {
-
+  // appends creditcardnumber to url
   fetch( 'https://techcase-cards-api.herokuapp.com/api/v1/cards/' + creditCardNumber + '/apply', {
       method: 'POST',
       body: JSON.stringify( {
@@ -180,14 +180,16 @@ function sendToAPI( creditCardNumber, creditScore ) {
       headers: new Headers( {
         'Content-Type': 'application/json'
       } )
+      // posts error message if problem
     } ).then( res => res.json() )
     .catch( error => console.error( 'Error:', error ) )
     .then( response => alert( response.message ) )
 
 }
 
+// refreshes list of all cards
 function populateCardList() {
-
+  // creates conatiner for all cards
   var ul = document.createElement( 'ul' );
   ul.id = "cardList";
   var container = document.getElementById( 'cardListContainer' ).appendChild( ul );
@@ -214,11 +216,7 @@ function populateCardList() {
     var cardImage = document.createElement( 'img' );
     cardImage.id = "cardImage";
     cardImage.setAttribute( 'src', card.image );
-    cardImage.onclick = ga( 'send', 'event',
-      'Cards',
-      'imageClick',
-      card.name
-    );
+
 
 
     //Add info
@@ -288,8 +286,9 @@ function populateCardList() {
       document.getElementById( "modalApplyButton" ).onclick = function() {
         var enteredScore = parseInt( prompt( "Please enter your credit score" ) );
         if ( enteredScore % 1 === 0 && enteredScore < 851 && enteredScore > 299 ) {
+          console.log( "test" );
           ga( 'send', 'event',
-            'Cards',
+            'Apply',
             'applyClickPass',
             card.name,
             enteredScore
@@ -298,7 +297,7 @@ function populateCardList() {
         } else {
           alert( enteredScore + " is not a valid credit score, please enter a non-decimal number between 300 and 850" );
           ga( 'send', 'event',
-            'Cards',
+            'Apply',
             'applyClickFail',
             card.name,
             enteredScore
@@ -389,12 +388,4 @@ function eventDetailsClick( cardname ) {
     'detailsClick',
     cardname
   );
-
-  function eventDetailsClick( cardname ) {
-    ga( 'send', 'event',
-      'Cards',
-      'detailsClick',
-      cardname
-    );
-  }
 }
