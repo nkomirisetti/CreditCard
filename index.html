@@ -1,13 +1,22 @@
 <!-- https://nkomirisetti.github.io/CreditCard2/ -->
 <html>
-<script type ="text/javascript" src = "/script.js"></script>
-  <head>
+  <head<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114930110-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114930110-1');
+</script>
+>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <h1>RoNi Cards</h1>
   </head>
 
 
   <body>
+    <script type ="text/javascript" src = "/script.js"></script>
     <aside id="sidebar">
       <form>
         <div>
@@ -27,6 +36,7 @@
               <input type="checkbox" onclick="return generalUpdate()" name="features" id="zero_intro_apr" value="zero_intro_apr">Zero Intro APR<br>
               <input type="checkbox" onclick="return generalUpdate()" name="features" id="cashback" value="cashback">Cashback<br>
             </div>
+          </form>
         <!-- <div>
           <button type="button" onclick="return generalUpdate()">Submit</button>
         </div> -->
@@ -124,6 +134,5 @@
         </script>
       </main>
     </div>
-
   </body>
 </html>
