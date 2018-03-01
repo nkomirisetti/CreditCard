@@ -18,7 +18,6 @@
 #sidebar{
 	vertical-align: top;
 	display: table-cell;
-	margin-left: 100px;
 	position: relative;
 	border: 3px solid red;
 	max-width: 10%;
@@ -26,24 +25,28 @@
 }
 
 #cardListContainer {
+/*	border: 3px solid red;*/
+
 	width: 648px;
 	max-width: 648px;
 	overflow: auto;
 }
 
 #cardList {
+	list-style-type: none;
 
 }
 
 #cardListElement{
 	list-style-type: none;
-	margin-top: 10px;
 	/*border: 3px solid red;*/
-	background-color: #DDE9ED;
 }
 
 #cardContainer {
-	/*border: 3px solid green;*/
+	border-radius: 7px;
+	margin-bottom: 20px;
+
+	border: 3px solid #89979C;
 	background-color: #C1D5DB;
 	height: 250px;
 	/*height: 30%;*/
@@ -52,7 +55,7 @@
 
 #cardImageContainer {
 	/*border: 3px solid red;*/
-	margin-left: 5%;
+	margin-left: 5px;
 	float: left;
 	position: relative;
 	top: 50%;
@@ -61,8 +64,9 @@
 
 #cardInfoContainer {
 	/*border: 3px solid blue;*/
-	/*margin-right: 3%;*/
-	width: 50%;
+	margin-right: 50px;
+	/*width: 50%;*/
+	max-width: 50%;
 	float: right;
 	position: relative;
 	top: 50%;
@@ -75,13 +79,16 @@
 }
 
 #cardInfoList {
+	margin-right: 30px;
+	/*border: 3px solid red;*/
 	float: left;
 	list-style-type: none;
 	font-family: 'Helvetica', 'Arial', sans-serif;
-	width: 100%;
+	width: 300px;
 }
 
 #infoListElement {
+	/*border: 3px solid blue;*/
 	font-size: .85em;
 	color: #183C7A;
 	padding: 2%;
