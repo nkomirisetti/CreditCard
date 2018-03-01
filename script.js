@@ -259,22 +259,21 @@ function clearCardList(){
 }
 
 
-// var detailsButton = document.getElementById('cardDetailsButton');
-// detailsButton.onclick = function(){
-//       var modalWindow = document.getElementById('modalWindow');
-//       modalWindow.style.display = "block";
-// };
-
 function detailsButtonClick() {
     var modalWindow = document.getElementById('modalWindow');
     modalWindow.style.display = "block";
-
-    window.onclick = function(event) {
-    if (event.target == modalWindow) {
-        modalWindow.style.display = "none";
-      }
-    }
 }
+
+window.onload = function() {
+  var modalCloseX = document.getElementById('modalCloseX');
+  var modalWindow = document.getElementById('modalWindow');
+  modalCloseX.onclick = function (){
+    
+    modalWindow.style.display = "none";
+  };
+}
+
+
 
 function updateCreditScore(){
   document.getElementById("creditScoreLabel").textContent= document.getElementById("slideCreditScore").value.toString();
