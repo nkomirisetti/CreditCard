@@ -169,7 +169,10 @@ function populateCardList(){
       var ul = document.createElement('ul');
       ul.id = "cardList";
       var container = document.getElementById('cardListContainer').appendChild(ul);
-
+      if (selectedCreditCards.length == 0){
+        // TODO show message that no cards are available with that critera, please broaden your search
+        
+      }
       this.selectedCreditCards.forEach(function(card){
       var li = document.createElement('li');
       li.id = 'li';
@@ -214,10 +217,23 @@ function populateCardList(){
       cardInfoList.appendChild(cardName);
       cardInfoList.appendChild(tags);
       cardInfoList.appendChild(buttonHolder);
-      merchant.innerHTML += "Merchant: " + card.merchant;
-      cardName.innerHTML += "Name: " + card.name;
-      tags.innerHTML += "Tags: " + card.tags;
-      detailsButton.innerHTML = "Details";
+      merchant.innerHTML += "Merchant: ".bold() + card.merchant;
+      cardName.innerHTML += "Name: ".bold() + card.name;
+
+      var formattedString = [];
+      for (var i = 0; i < card.tags.length; i++){
+        formattedString[i] = card.tags[i].toString().charAt(0).toUpperCase() + card.tags[i].slice(1);
+        formattedString[i] = formattedString[i].replace(/_/g," ");
+        formattedString[i] = " " + formattedString[i];
+      }
+
+      if (formattedString.length == 1){
+        tags.innerHTML += "Tag: ".bold() + formattedString;
+      }
+      else {
+        tags.innerHTML += "Tags: ".bold() + formattedString;
+      }
+      detailsButton.innerHTML = "Details".bold();
 
 
 
