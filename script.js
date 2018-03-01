@@ -122,7 +122,6 @@ function tagUpdate(){
   }
   clearCardList();
   this.selectedCreditCards = tagFilteredCards;
-  console.log(selectedCreditCards.length);
   populateCardList();
 }
 
