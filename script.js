@@ -251,9 +251,6 @@ function populateCardList(){
 
 })};
 
-window.onload = function() {
-
-};
 
 function clearCardList(){
     var parent = document.getElementById("cardListContainer");
@@ -271,6 +268,12 @@ function clearCardList(){
 function detailsButtonClick() {
     var modalWindow = document.getElementById('modalWindow');
     modalWindow.style.display = "block";
+
+    window.onclick = function(event) {
+    if (event.target == modalWindow) {
+        modalWindow.style.display = "none";
+      }
+    }
 }
 
 function updateCreditScore(){

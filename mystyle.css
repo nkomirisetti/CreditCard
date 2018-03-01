@@ -106,6 +106,8 @@
 }
 
 #modalWindow {
+	border-radius: 7px;
+
 	background-color: #DDE9ED;
 	/*border: 3px solid blue;*/
 	display: none; /*none Hidden by default */
@@ -117,7 +119,7 @@
 
 #modalImageAndApply {
 	border: 3px solid blue;
-	height: 300px;
+	height: 250px;
 }
 
 #modalImageDiv {
