@@ -261,10 +261,14 @@ function populateCardList() {
         " to " + card.recommended_credit_scores[ card.recommended_credit_scores.length - 1 ].max;
       document.getElementById( "modalMerchant" ).innerHTML = "Merchant: ".bold() +
         card.merchant;
+
+      // gets intro APR from card and presents
       if ( card.intro_apr.does_not_apply == false ) {
         document.getElementById( "modalIntro" ).innerHTML = "Intro APR: ".bold() +
           card.intro_apr.rate + "% for " + card.intro_apr.months + " months";
       }
+
+      // gets regular APR and presents
       if ( card.regular_apr.variable == true ) {
         document.getElementById( "modalNormal" ).innerHTML =
           "Normal APR:".bold() + " Variable rate at " + card.regular_apr.rate + "%";
@@ -273,26 +277,34 @@ function populateCardList() {
           "Normal APR: Non-variable rate at " + card.regular_apr.rate + "%";
       }
 
+      // if there is only one fee or rate info
       if ( card.rates_and_fees.length == 1 ) {
         if ( card.rates_and_fees[ 0 ].fee == 0 ) {
           document.getElementById( "modalRates" ).innerHTML = "Rates and Fees:".bold() + "No annual fee";
+          // if no caveat, then just run just put in fee like normal
         } else if ( card.rates_and_fees[ 0 ].caveat == "" ) {
           document.getElementById( "modalRates" ).innerHTML = "Rates and Fees:".bold() + " Annual fee of " +
             card.rates_and_fees[ 0 ].fee + ".";
+          // sets rates and fee if caveat exists
         } else {
           document.getElementById( "modalRates" ).innerHTML = "Rates and Fees:".bold() + " Annual fee of " +
             card.rates_and_fees[ 0 ].fee + " and " + card.rates_and_fees[ 0 ].caveat;
         }
+
+        // if more than one element in fee array, present both
       } else {
+        // add
         if ( card.rates_and_fees[ 0 ].fee == 0 ) {
-          document.getElementById( "modalRates" ).innerHTML = "Rates and Fees: No annual fee. ";
+          document.getElementById( "modalRates" ).innerHTML = "Rates and Fees:".bold() + " No annual fee. ";
         } else if ( card.rates_and_fees[ 0 ].caveat == "" ) {
-          document.getElementById( "modalRates" ).innerHTML = "Rates and Fees: Annual fee of " +
+          document.getElementById( "modalRates" ).innerHTML = "Rates and Fees:".bold() + " Annual fee of " +
             card.rates_and_fees[ 0 ].fee + ". ";
         } else {
-          document.getElementById( "modalRates" ).innerHTML = "Rates and Fees: Annual fee of " +
+          document.getElementById( "modalRates" ).innerHTML = "Rates and Fees:".bold() + " Annual fee of " +
             card.rates_and_fees[ 0 ].fee + " and " + card.rates_and_fees[ 0 ].caveat + ". ";
         }
+
+
 
         document.getElementById( "modalRates" ).innerHTML = document.getElementById( "modalRates" ).innerHTML + card.rates_and_fees[ 1 ].name + " at rate of " +
           card.rates_and_fees[ 1 ].rate + " for duration of " + card.rates_and_fees[ 1 ].duration_months + " months.";
@@ -340,9 +352,9 @@ function populateCardList() {
     }
 
     if ( formattedString.length == 1 ) {
-      tags.innerHTML += "Tag: ".bold() + formattedString;
+      tags.innerHTML += "Tag: ".bold() + formattedString + "<br>";
     } else {
-      tags.innerHTML += "Tags: ".bold() + formattedString;
+      tags.innerHTML += "Tags: ".bold() + formattedString + "<br>";
     }
     detailsButton.innerHTML = "Details".bold();
 
