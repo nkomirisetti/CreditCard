@@ -16,10 +16,20 @@ fetch(urlGET).then(function(response) {
     response.json().then(function(json) {
       this.creditCards = json;
       setup();
+      ga('send','event',
+        'API',
+        'pass',
+        response
+      );
     });
 
   } else {
     // fail case if response is not ok
+    ga('send','event',
+      'API',
+      'fail',
+      response
+    );
     console.log('API PULL failed')
   }
 });
@@ -269,7 +279,6 @@ function populateCardList(){
             card.rates_and_fees[1].rate + " for duration of " + card.rates_and_fees[1].duration_months + " months.";
           };
           document.getElementById("modalApplyButton").onclick = function(){
-            console.log(card.name);
             var enteredScore = parseInt(prompt("Please enter your credit score"));
             if (enteredScore % 1 === 0 && enteredScore < 851 && enteredScore > 299){
               ga('send','event',
@@ -365,7 +374,6 @@ function getCurrentMerchant(){
 }
 
 function eventDetailsClick(cardname){
-//console.log(cardname+" event details run");
   ga('send','event',
     'Cards',
     'detailsClick',
