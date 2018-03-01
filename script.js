@@ -213,13 +213,10 @@ function populateCardList(){
       var detailsButton = document.createElement('button');
       detailsButton.id = card.id;
       detailsButton.onclick = function(){
+          eventDetailsClick(card.name);
           var modalWindow = document.getElementById('modalWindow');
           modalWindow.style.display = "block";
-          ga('send','event',
-            'Cards',
-            'detailsButtonClick',
-            card.name
-          );
+
         };
 
 
@@ -277,7 +274,7 @@ window.onload = function() {
   var modalCloseX = document.getElementById('modalCloseX');
   var modalWindow = document.getElementById('modalWindow');
   modalCloseX.onclick = function (){
-    
+
     modalWindow.style.display = "none";
   };
 }
@@ -290,14 +287,13 @@ function updateCreditScore(){
 
 function getCurrentMerchant(){
   return document.getElementById("selectMerchant").value;
-
 }
 
-function merchantEvent(){
-ga('send', {
-  hitType: 'event',
-  eventCategory: 'Filters',
-  eventAction: 'merchantSelect',
-  eventLabel: getCurrentMerchant()
-});
+function eventDetailsClick(cardname){
+console.log(cardname+" event details run");
+  ga('send','event',
+    'Cards',
+    'buttonClick',
+    cardname
+  );
 }
