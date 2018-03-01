@@ -83,12 +83,15 @@ function generalUpdate(){
   // clears current list of selected creditcards
   this.selectedCreditCards = [];
 
-  // grabs selected merchants from
+  // grabs selected merchants from html
   var selectedMerchant = document.querySelector('#selectMerchant');
+
+  // if all merchants are selected, then just go to next filter
   if (selectedMerchant.value === "all merchants"){
     this.selectedCreditCards = this.creditCards;
     creditScoreUpdate();
   } else {
+  // narrow down based on what merchant is selected and only push matches
   for (var i=0; i<this.creditCards.length; i++){
     if (selectedMerchant.value == this.creditCards[i].merchant){
         this.selectedCreditCards.push(this.creditCards[i]);
