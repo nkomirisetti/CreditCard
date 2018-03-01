@@ -43,26 +43,22 @@
           </div>
           <p>Features</p>
           <div>
-            <input type="checkbox" onclick="return generalUpdate(); ga('send','event',
-              'Filters',
+            <input type="checkbox" onclick="ga('send','event','Filters',
               'featuresChoose',
-              'travel'
-            );"  name="features" id="travel" value="travel">Travel <br>
-            <input type="checkbox" onclick="return generalUpdate(); ga('send','event',
-              'Filters',
+              travel.id
+            );return generalUpdate();"  name="features" id="travel" value="travel">Travel <br>
+            <input type="checkbox" onclick="ga('send','event','Filters',
               'featuresChoose',
-              'no_annual_fee'
-            );" name="features" id="no_annual_fee" value="no_annual_fee">No annual fee<br>
-            <input type="checkbox" onclick="return generalUpdate()" ga('send','event',
-              'Filters',
+              no_annual_fee.id
+            );return generalUpdate();" name="features" id="no_annual_fee" value="no_annual_fee">No annual fee<br>
+            <input type="checkbox" onclick="ga('send','event','Filters',
               'featuresChoose',
-              'zero_intro_apr'
-            ); name="features" id="zero_intro_apr" value="zero_intro_apr">Zero intro apr<br>
-            <input type="checkbox" onclick="return generalUpdate()"ga('send','event',
-              'Filters',
+              zero_intro_apr.id
+            );return generalUpdate();" name="features" id="zero_intro_apr" value="zero_intro_apr">Zero intro apr<br>
+            <input type="checkbox" onclick="ga('send','event','Filters',
               'featuresChoose',
-              'cashback'
-            ); name="features" id="cashback" value="cashback">Cashback<br>
+              cashback.id
+            );return generalUpdate();" name="features" id="cashback" value="cashback">Cashback<br>
           </div>
       </form>
     </div>
@@ -82,12 +78,12 @@
           </div>
           <div id="modalInfoDiv">
             <ul>
-              <li>Vendor: </li>
-              <li>Credit Range: </li>
-              <li>Intro APR: </li>
-              <li>Normal APR: </li>
-              <li>Rates + Fees: </li>
-              <li>Features: </li>
+              <li id="modalMerchant">Merchant: </li>
+              <li id="modalCreditRange">Credit Range: </li>
+              <li id="modalIntro">Intro APR: </li>
+              <li id="modalNormal">Normal APR: </li>
+              <li id="modalRates">Rates + Fees: </li>
+              <li id="modalFeatures">Features: </li>
             </ul>
           </div>
 

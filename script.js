@@ -215,6 +215,20 @@ function populateCardList(){
       detailsButton.onclick = function(){
           eventDetailsClick(card.name);
           var modalWindow = document.getElementById('modalWindow');
+          document.getElementById("modalImage").src = card.image;
+          document.getElementById("modalMerchant").textContent = "Merchant: "
+          + card.merchant;
+          if (card.intro_apr.does_not_apply == false){
+            document.getElementById("modalIntro").textContent = "Intro APR: "
+            + card.intro_apr.rate + "% for " +card.intro_apr.months + " months";
+          }
+          if (card.regular_apr.variable == true){
+            document.getElementById("modalNormal").textContent =
+            "Normal APR: Variable rate at " + card.regular_apr.rate + "%";
+          } else{
+            document.getElementById("modalNormal").textContent =
+            "Normal APR: Non-variable rate at " + card.regular_apr.rate + "%";
+          }
           modalWindow.style.display = "block";
 
         };
