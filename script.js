@@ -69,11 +69,13 @@ function setup(){
   if(cardTags.includes("cashback") == false){
     document.getElementById("cashback").style.visibility = "hidden";
   }
+
+  this.selectedCreditCards = this.creditCards;
+  populateCardList();
 };
 
 // runs when button is pressed, maybe remove and replace with live view?
 function generalUpdate(){
-  //console.log("fuck");
   this.selectedCreditCards = [];
   var selectedMerchant = document.querySelector('#selectMerchant');
   if (selectedMerchant.value === "all merchants"){
@@ -115,8 +117,7 @@ function tagUpdate(){
     }
   }
   this.selectedCreditCards = tagFilteredCards;
-
-  select
+  populateCardList();
 }
 
 
@@ -142,13 +143,12 @@ function getSelectedTags(){
   }
   return selectedTags;
 }
-
-function sendToAPI(){
-
-  fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards/'+82457245+'/apply', {
+// sends data to api
+function sendToAPI(creditCardNumber,creditScore){
+  fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards/'+creditCardNumber+'/apply', {
     method: 'POST', // or 'PUT'
     body: JSON.stringify({
-           "creditScore": getCreditScore().toString()
+           "creditScore": creditScore.toString()
          }),
     headers: new Headers({
       'Content-Type': 'application/json'
@@ -159,14 +159,13 @@ function sendToAPI(){
 }
 
 function populateCardList(){
-      var names = ['card1','card2','card3','card4', 'card5'];
       var ul = document.createElement('ul');
       ul.id = "cardList";
       var container = document.getElementById('cardListContainer').appendChild(ul);
 
-      names.forEach(function(name){
+      this.selectedCreditCards.forEach(function(card){
       var li = document.createElement('li');
-      li.id = 'cardListElement'
+      li.id = 'li';
 
       var cardContainer = document.createElement('div');
       cardContainer.id = "cardContainer";
@@ -180,7 +179,7 @@ function populateCardList(){
       //Add image
       var cardImage = document.createElement('img');
       cardImage.id = "cardImage";
-      cardImage.setAttribute('src', 'https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8blm_trvsigcm_v_250x158.png');
+      cardImage.setAttribute('src', card.image);
 
       //Add info
       var cardInfoList = document.createElement('ul');
@@ -197,12 +196,12 @@ function populateCardList(){
       var buttonHolder = document.createElement('li');
       buttonHolder.id = "infoListElement";
       var detailsButton = document.createElement('button');
-      detailsButton.id = 'cardDetailsButton';
+      detailsButton.id = card.id;
       detailsButton.onclick = function(){
           var modalWindow = document.getElementById('modalWindow');
           modalWindow.style.display = "block";
         };
-      
+
 
       //detailsButton.onclick = "displayCardDetails()";
       buttonHolder.appendChild(detailsButton);
@@ -211,10 +210,10 @@ function populateCardList(){
       cardInfoList.appendChild(tags);
       cardInfoList.appendChild(features);
       cardInfoList.appendChild(buttonHolder);
-      merchant.innerHTML += "Merchant: " + name;
-      cardName.innerHTML += "Name: " + name;
-      tags.innerHTML += "Tags: " + name;
-      features.innerHTML += "Features: " + name;
+      merchant.innerHTML += "Merchant: " + card.merchant;
+      cardName.innerHTML += "Name: " + card.name;
+      tags.innerHTML += "Tags: " + card.tags;
+      features.innerHTML += "Features: " + card.features;
       detailsButton.innerHTML = "Details";
 
 
@@ -227,11 +226,11 @@ function populateCardList(){
       li.appendChild(cardContainer);
       ul.appendChild(li);
 
-    
+
 })};
 
 window.onload = function() {
-  populateCardList();
+
 };
 
 // var detailsButton = document.getElementById('cardDetailsButton');
@@ -244,9 +243,3 @@ function detailsButtonClick() {
     var modalWindow = document.getElementById('modalWindow');
     modalWindow.style.display = "block";
 }
-
-
-
-
-
-
