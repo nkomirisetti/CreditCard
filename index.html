@@ -24,7 +24,7 @@
     <div id="sidebar">
       <form>
         <div>
-          <p>Merchant</p>
+          <p><b>Merchant</b></p>
           <select id="selectMerchant" onchange="return generalUpdate()" onclick="ga('send','event',
             'Filters',
             'merchantSelect',
@@ -33,7 +33,7 @@
             <option value="all merchants">All Merchants</option>
           </select>
         </div>
-        <p>Credit Score</p>
+        <p><b>Credit Score</b></p>
           <div class="slidecontainer" >
             <input oninput="return updateCreditScore()" onchange="return generalUpdate()"
             type="range" min="300" max="850" value="850" class="slider" id="slideCreditScore"
@@ -42,9 +42,9 @@
               'scoreSlide',
               slideCreditScore.value
             );">
-            <label id="creditScoreLabel">850</label>
+            <label id="creditScoreLabel"><b>850</b></label>
           </div>
-          <p>Features</p>
+          <p><b>Features</b></p>
           <div>
             <input type="checkbox" onclick="ga('send','event','Filters',
               'featuresChoose',
