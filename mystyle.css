@@ -7,6 +7,11 @@
 	width: 870px;/*here to get rid of overlap*/
 }
 
+#headerImage {
+	height: 100%;
+	width: relative;
+}
+
 /*#pageHeaderRow {
 	display: table-row;
 
@@ -16,8 +21,8 @@
 	text-align: center;
 	font-size: 2em;
 	/*border: 3px solid red;*/
-	background-color: red;
-	height: 90px;
+	/*background-color: red;*/
+	height: 180px;
 	width: 100%;
 }
 
@@ -34,6 +39,7 @@
 }
 
 #sidebar{
+	margin-top: 120px;
 	color: #183C7A;
     font-family: "Open Sans",sans-serif;
 	font-size: .8em;
