@@ -372,19 +372,20 @@ function populateCardList() {
   } )
 };
 
-
+// clears list of cards, used whenever filter critera changes
 function clearCardList() {
   var parent = document.getElementById( "cardListContainer" );
   var child = document.getElementById( "cardList" );
   parent.removeChild( child );
 }
 
-
+// handles details button click
 function detailsButtonClick() {
   var modalWindow = document.getElementById( 'modalWindow' );
   modalWindow.style.display = "block";
 }
 
+// manages modal window open and close on load
 window.onload = function() {
   var modalCloseX = document.getElementById( 'modalCloseX' );
   var modalWindow = document.getElementById( 'modalWindow' );
