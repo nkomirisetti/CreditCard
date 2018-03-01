@@ -312,7 +312,6 @@ function populateCardList() {
       document.getElementById( "modalApplyButton" ).onclick = function() {
         var enteredScore = parseInt( prompt( "Please enter your credit score" ) );
         if ( enteredScore % 1 === 0 && enteredScore < 851 && enteredScore > 299 ) {
-          console.log( "test" );
           ga( 'send', 'event',
             'Apply',
             'applyClickPass',
@@ -334,8 +333,6 @@ function populateCardList() {
       modalWindow.style.display = "block";
     };
 
-
-    //detailsButton.onclick = "displayCardDetails()";
     buttonHolder.appendChild( detailsButton );
     cardInfoList.appendChild( merchant );
     cardInfoList.appendChild( cardName );
@@ -351,6 +348,7 @@ function populateCardList() {
       formattedString[ i ] = " " + formattedString[ i ];
     }
 
+    // adds tag based on singular or plural
     if ( formattedString.length == 1 ) {
       tags.innerHTML += "Tag: ".bold() + formattedString + "<br>";
     } else {
