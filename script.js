@@ -117,6 +117,7 @@ function tagUpdate(){
     }
   }
   this.selectedCreditCards = tagFilteredCards;
+  console.log(selectedCreditCards.length);
   populateCardList();
 }
 
@@ -159,6 +160,7 @@ function sendToAPI(creditCardNumber,creditScore){
 }
 
 function populateCardList(){
+
       var ul = document.createElement('ul');
       ul.id = "cardList";
       var container = document.getElementById('cardListContainer').appendChild(ul);
@@ -228,6 +230,8 @@ function populateCardList(){
 window.onload = function() {
 
 };
+
+
 
 // var detailsButton = document.getElementById('cardDetailsButton');
 // detailsButton.onclick = function(){
