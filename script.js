@@ -192,6 +192,11 @@ function populateCardList(){
       var cardImage = document.createElement('img');
       cardImage.id = "cardImage";
       cardImage.setAttribute('src', card.image);
+      cardImage.onclick=ga('send','event',
+        'Cards',
+        'imageClick',
+        card.name
+      );
 
       //Add info
       var cardInfoList = document.createElement('ul');
@@ -210,6 +215,11 @@ function populateCardList(){
       detailsButton.onclick = function(){
           var modalWindow = document.getElementById('modalWindow');
           modalWindow.style.display = "block";
+          ga('send','event',
+            'Cards',
+            'detailsButtonClick',
+            card.name
+          );
         };
 
 

@@ -2,7 +2,7 @@
 <html>
 
   <head><!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- Google Analytics -->
+    <!-- Google Analytics
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -12,15 +12,25 @@
     ga('create', 'UA-114930110-1', 'auto');
     ga('send', 'pageview');
     </script>
-    <!-- End Google Analytics -->
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114930110-1"></script>
+     End Google Analytics -->
+     <!-- code option two-->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114930110-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-114930110-1');
-    </script>
+    </script> -->
+
+    <!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-114930110-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <title>RoNi Cards</title>
   </head>
@@ -42,16 +52,38 @@
           </select>
         </div>
         <p>Credit Score</p>
-          <div class="slidecontainer">
-            <input oninput="return updateCreditScore()" onchange="return generalUpdate()"  type="range" min="300" max="850" value="850" class="slider" id="slideCreditScore">
+          <div class="slidecontainer" >
+            <input oninput="return updateCreditScore()" onchange="return generalUpdate()"
+            type="range" min="300" max="850" value="850" class="slider" id="slideCreditScore"
+            onclick="ga('send','event',
+              'Filters',
+              'scoreSlide',
+              slideCreditScore.value
+            );">
             <label id="creditScoreLabel">850</label>
           </div>
           <p>Features</p>
           <div>
-            <input type="checkbox" onclick="return generalUpdate()" name="features" id="travel" value="travel">Travel <br>
-            <input type="checkbox" onclick="return generalUpdate()" name="features" id="no_annual_fee" value="no_annual_fee">No annual fee<br>
-            <input type="checkbox" onclick="return generalUpdate()" name="features" id="zero_intro_apr" value="zero_intro_apr">Zero intro apr<br>
-            <input type="checkbox" onclick="return generalUpdate()" name="features" id="cashback" value="cashback">Cashback<br>
+            <input type="checkbox" onclick="return generalUpdate(); ga('send','event',
+              'Filters',
+              'featuresChoose',
+              'travel'
+            );"  name="features" id="travel" value="travel">Travel <br>
+            <input type="checkbox" onclick="return generalUpdate(); ga('send','event',
+              'Filters',
+              'featuresChoose',
+              'no_annual_fee'
+            );" name="features" id="no_annual_fee" value="no_annual_fee">No annual fee<br>
+            <input type="checkbox" onclick="return generalUpdate()" ga('send','event',
+              'Filters',
+              'featuresChoose',
+              'zero_intro_apr'
+            ); name="features" id="zero_intro_apr" value="zero_intro_apr">Zero intro apr<br>
+            <input type="checkbox" onclick="return generalUpdate()"ga('send','event',
+              'Filters',
+              'featuresChoose',
+              'cashback'
+            ); name="features" id="cashback" value="cashback">Cashback<br>
           </div>
       </form>
     </div>
