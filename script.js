@@ -171,7 +171,10 @@ function populateCardList(){
       var container = document.getElementById('cardListContainer').appendChild(ul);
       if (selectedCreditCards.length == 0){
         // TODO show message that no cards are available with that critera, please broaden your search
-        
+        var noMatchesFoundText = document.createElement('li');
+        noMatchesFoundText.id = "noMatchesFoundText";
+        noMatchesFoundText.innerHTML += "No Matches Found";
+        ul.appendChild(noMatchesFoundText);
       }
       this.selectedCreditCards.forEach(function(card){
       var li = document.createElement('li');
