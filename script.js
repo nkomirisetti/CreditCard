@@ -292,4 +292,4 @@ function merchantEvent(){
   eventAction: 'merchantSelect',
   eventLabel: getCurrentMerchant()
 });
-};
+}
