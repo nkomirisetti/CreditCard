@@ -161,8 +161,9 @@ function getSelectedTags(){
 }
 // sends data to api
 function sendToAPI(creditCardNumber,creditScore){
+
   fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards/'+creditCardNumber+'/apply', {
-    method: 'POST', // or 'PUT'
+    method: 'POST',
     body: JSON.stringify({
            "creditScore": creditScore.toString()
          }),
@@ -171,7 +172,7 @@ function sendToAPI(creditCardNumber,creditScore){
     })
   }).then(res => res.json())
   .catch(error => console.error('Error:', error))
-  .then(response => console.log('Success:', response));
+  .then(response => alert(response.message))
 }
 
 function populateCardList(){
@@ -226,70 +227,73 @@ function populateCardList(){
           eventDetailsClick(card.name);
           var modalWindow = document.getElementById('modalWindow');
           document.getElementById("modalImage").src = card.image;
-          document.getElementById("modalCreditRange").textContent = "Credit Score Range: "
+          document.getElementById("modalCreditRange").innerHTML = "Credit Score Range: ".bold()
           + card.recommended_credit_scores[0].min
           + " to " + card.recommended_credit_scores[card.recommended_credit_scores.length-1].max;
-          document.getElementById("modalMerchant").textContent = "Merchant: "
+          document.getElementById("modalMerchant").innerHTML = "Merchant: ".bold()
           + card.merchant;
           if (card.intro_apr.does_not_apply == false){
-            document.getElementById("modalIntro").textContent = "Intro APR: "
+            document.getElementById("modalIntro").innerHTML = "Intro APR: ".bold()
             + card.intro_apr.rate + "% for " +card.intro_apr.months + " months";
           }
           if (card.regular_apr.variable == true){
-            document.getElementById("modalNormal").textContent =
-            "Normal APR: Variable rate at " + card.regular_apr.rate + "%";
+            document.getElementById("modalNormal").innerHTML =
+            "Normal APR:".bold() +" Variable rate at " + card.regular_apr.rate + "%";
           } else{
-            document.getElementById("modalNormal").textContent =
+            document.getElementById("modalNormal").innerHTML =
             "Normal APR: Non-variable rate at " + card.regular_apr.rate + "%";
           }
 
           if (card.rates_and_fees.length == 1){
               if(card.rates_and_fees[0].fee == 0){
-                document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee";
+                document.getElementById("modalRates").innerHTML = "Rates and Fees:".bold()+ "No annual fee";
               } else if (card.rates_and_fees[0].caveat == ""){
-                document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+                document.getElementById("modalRates").innerHTML = "Rates and Fees:".bold()+ " Annual fee of "
                 + card.rates_and_fees[0].fee + ".";
               } else {
-                document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+                document.getElementById("modalRates").innerHTML = "Rates and Fees:".bold()+" Annual fee of "
                 + card.rates_and_fees[0].fee + " and " + card.rates_and_fees[0].caveat;
               }
           } else {
             if(card.rates_and_fees[0].fee == 0){
-              document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee. ";
+              document.getElementById("modalRates").innerHTML = "Rates and Fees: No annual fee. ";
             } else if (card.rates_and_fees[0].caveat == ""){
-              document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+              document.getElementById("modalRates").innerHTML = "Rates and Fees: Annual fee of "
               + card.rates_and_fees[0].fee + ". ";
             } else {
-              document.getElementById("modalRates").textContent = "Rates and Fees: Annual fee of "
+              document.getElementById("modalRates").innerHTML = "Rates and Fees: Annual fee of "
               + card.rates_and_fees[0].fee + " and " + card.rates_and_fees[0].caveat +". ";
             }
 
-            document.getElementById("modalRates").textContent = document.getElementById("modalRates").textContent+ card.rates_and_fees[1].name + " at rate of " +
+            document.getElementById("modalRates").innerHTML = document.getElementById("modalRates").innerHTML+ card.rates_and_fees[1].name + " at rate of " +
             card.rates_and_fees[1].rate + " for duration of " + card.rates_and_fees[1].duration_months + " months.";
           };
-          modalWindow.style.display = "block";
-        };
-        document.getElementById("modalApplyButton").onclick = function(){
-          var enteredScore = prompt("Please enter your credit score");
-          if (enteredScore.isInteger() == true && enteredScore < 851 && enteredScore > 299){
-            ga('send','event',
-              'Cards',
-              'applyClickPass',
-              card.name,
-              enteredScore
-            );
-          }
-          else {
-              alert(enteredScore + " is not a valid credit score, please enter a non-decimal number between 300 and 850");
+          document.getElementById("modalApplyButton").onclick = function(){
+            console.log(card.name);
+            var enteredScore = parseInt(prompt("Please enter your credit score"));
+            if (enteredScore % 1 === 0 && enteredScore < 851 && enteredScore > 299){
               ga('send','event',
                 'Cards',
-                'applyClickFail',
+                'applyClickPass',
                 card.name,
                 enteredScore
               );
-          }
+              sendToAPI(card.id, enteredScore);
+            }
+            else {
+                alert(enteredScore + " is not a valid credit score, please enter a non-decimal number between 300 and 850");
+                ga('send','event',
+                  'Cards',
+                  'applyClickFail',
+                  card.name,
+                  enteredScore
+                );
+            }
 
+          };
+          modalWindow.style.display = "block";
         };
+
 
       //detailsButton.onclick = "displayCardDetails()";
       buttonHolder.appendChild(detailsButton);
@@ -353,7 +357,7 @@ window.onload = function() {
 
 
 function updateCreditScore(){
-  document.getElementById("creditScoreLabel").textContent= document.getElementById("slideCreditScore").value.toString();
+  document.getElementById("creditScoreLabel").innerHTML= document.getElementById("slideCreditScore").value.toString().bold();
 }
 
 function getCurrentMerchant(){
@@ -361,7 +365,7 @@ function getCurrentMerchant(){
 }
 
 function eventDetailsClick(cardname){
-console.log(cardname+" event details run");
+//console.log(cardname+" event details run");
   ga('send','event',
     'Cards',
     'detailsClick',
