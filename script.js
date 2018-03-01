@@ -171,7 +171,7 @@ function populateCardList(){
       var container = document.getElementById('cardListContainer').appendChild(ul);
       if (selectedCreditCards.length == 0){
         // TODO show message that no cards are available with that critera, please broaden your search
-        
+
       }
       this.selectedCreditCards.forEach(function(card){
       var li = document.createElement('li');
@@ -273,3 +273,17 @@ function detailsButtonClick() {
 function updateCreditScore(){
   document.getElementById("creditScoreLabel").textContent= document.getElementById("slideCreditScore").value.toString();
 }
+
+function getCurrentMerchant(){
+  return document.getElementById("selectMerchant").value;
+
+}
+
+function merchantEvent(){
+  ga('send', {
+  hitType: 'event',
+  eventCategory: 'Filters',
+  eventAction: 'merchantSelect',
+  eventLabel: getCurrentMerchant()
+});
+};

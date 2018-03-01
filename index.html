@@ -21,7 +21,7 @@
       <form>
         <div>
           <p>Merchant</p>
-          <select id="selectMerchant" onchange="return generalUpdate()">
+          <select id="selectMerchant" onchange="return generalUpdate()" onclick="return merchantEvent()">
             <option  value="all merchants">All Merchants</option>
           </select>
         </div>
@@ -62,7 +62,7 @@
               <li>Features: </li>
             </ul>
           </div>
-          
+
         </div>
       </div>
       <main id="cardListContainer">
