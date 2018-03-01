@@ -171,10 +171,14 @@ function populateCardList(){
       var container = document.getElementById('cardListContainer').appendChild(ul);
       if (selectedCreditCards.length == 0){
         // TODO show message that no cards are available with that critera, please broaden your search
+<<<<<<< HEAD
+
+=======
         var noMatchesFoundText = document.createElement('li');
         noMatchesFoundText.id = "noMatchesFoundText";
         noMatchesFoundText.innerHTML += "No Matches Found";
         ul.appendChild(noMatchesFoundText);
+>>>>>>> da7a978c258902eac8c5d766c2f1f81329108b21
       }
       this.selectedCreditCards.forEach(function(card){
       var li = document.createElement('li');
@@ -279,3 +283,17 @@ function detailsButtonClick() {
 function updateCreditScore(){
   document.getElementById("creditScoreLabel").textContent= document.getElementById("slideCreditScore").value.toString();
 }
+
+function getCurrentMerchant(){
+  return document.getElementById("selectMerchant").value;
+
+}
+
+function merchantEvent(){
+  ga('send', {
+  hitType: 'event',
+  eventCategory: 'Filters',
+  eventAction: 'merchantSelect',
+  eventLabel: getCurrentMerchant()
+});
+};
