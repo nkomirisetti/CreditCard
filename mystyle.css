@@ -1,4 +1,5 @@
 #container-full {
+	margin-left: 75px;
 	display: table;
 	border: 3px solid blue;
 	height: 5000px;
