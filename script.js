@@ -72,20 +72,26 @@ function setup(){
     document.getElementById("cashback").style.visibility = "hidden";
   }
 
-
-
+  // sets all credit cards to selected credit cards at initial load and populates list
   this.selectedCreditCards = this.creditCards;
   populateCardList();
 };
 
-// runs when button is pressed, maybe remove and replace with live view?
+// update runs on change of any slider, button, or checkbox
+// need general method since filters are stacking
 function generalUpdate(){
+  // clears current list of selected creditcards
   this.selectedCreditCards = [];
+
+  // grabs selected merchants from html
   var selectedMerchant = document.querySelector('#selectMerchant');
+
+  // if all merchants are selected, then just go to next filter
   if (selectedMerchant.value === "all merchants"){
     this.selectedCreditCards = this.creditCards;
     creditScoreUpdate();
   } else {
+  // narrow down based on what merchant is selected and only push matches
   for (var i=0; i<this.creditCards.length; i++){
     if (selectedMerchant.value == this.creditCards[i].merchant){
         this.selectedCreditCards.push(this.creditCards[i]);
@@ -95,6 +101,7 @@ function generalUpdate(){
   }
 }
 
+// particularly updates credit score slider, runs after general update
 function creditScoreUpdate(){
     // creates new empty array that we will push matches to
     var creditFilteredCards = [];
@@ -257,13 +264,11 @@ function populateCardList(){
               + card.rates_and_fees[0].fee + " and " + card.rates_and_fees[0].caveat +". ";
             }
 
-            document.getElementById("modalRates").textContent += card.rates_and_fees[1].name + " at rate of " +
+            document.getElementById("modalRates").textContent = document.getElementById("modalRates").textContent+ card.rates_and_fees[1].name + " at rate of " +
             card.rates_and_fees[1].rate + " for duration of " + card.rates_and_fees[1].duration_months + " months.";
 
           };
         };
-<<<<<<< HEAD
-=======
         document.getElementById("modalApplyButton").onclick = function(){
           var enteredScore = prompt("Please enter your credit score");
           if (enteredScore.isInteger() == true && enteredScore < 851 && enteredScore > 299){
@@ -285,7 +290,6 @@ function populateCardList(){
           }
 
         };
->>>>>>> 5fe72e4fb598c4647628a54c694d379d3120214f
 
 
 
@@ -368,7 +372,7 @@ function eventDetailsClick(cardname){
 console.log(cardname+" event details run");
   ga('send','event',
     'Cards',
-    'buttonClick',
+    'detailsClick',
     cardname
   );
 }
