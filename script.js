@@ -290,15 +290,7 @@ function populateCardList(){
           }
 
         };
-
-
-
-
-          modalWindow.style.display = "block";
-
-        //
-
-
+        
       //detailsButton.onclick = "displayCardDetails()";
       buttonHolder.appendChild(detailsButton);
       cardInfoList.appendChild(merchant);
