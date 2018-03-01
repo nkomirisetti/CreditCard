@@ -96,16 +96,20 @@ function generalUpdate(){
 }
 
 function creditScoreUpdate(){
+    // creates new empty array that we will push matches to
     var creditFilteredCards = [];
+    // loops through and pushes matches only
     for (var i = 0; i < this.selectedCreditCards.length; i++){
       if (this.selectedCreditCards[i].recommended_credit_scores[0].min < getCreditScore()){
         creditFilteredCards.push(selectedCreditCards[i]);
       }
     }
+    // sets filtered array to new selected cards array
     this.selectedCreditCards = creditFilteredCards;
     tagUpdate();
 };
 
+// filters based on tags checked
 function tagUpdate(){
   var tagFilteredCards = [];
   var selectedTags = getSelectedTags();
@@ -169,10 +173,9 @@ function populateCardList(){
       ul.id = "cardList";
       var container = document.getElementById('cardListContainer').appendChild(ul);
       if (selectedCreditCards.length == 0){
-        // TODO show message that no cards are available with that critera, please broaden your search
         var noMatchesFoundText = document.createElement('li');
         noMatchesFoundText.id = "noMatchesFoundText";
-        noMatchesFoundText.innerHTML += "No Matches Found";
+        noMatchesFoundText.innerHTML += "No Matches Found, try broadening your filter";
         ul.appendChild(noMatchesFoundText);
       }
       this.selectedCreditCards.forEach(function(card){
@@ -259,13 +262,37 @@ function populateCardList(){
 
           };
         };
+<<<<<<< HEAD
+=======
+        document.getElementById("modalApplyButton").onclick = function(){
+          var enteredScore = prompt("Please enter your credit score");
+          if (enteredScore.isInteger() == true && enteredScore < 851 && enteredScore > 299){
+            ga('send','event',
+              'Cards',
+              'applyClickPass',
+              card.name,
+              enteredScore
+            );
+          }
+          else {
+              alert(enteredScore + " is not a valid credit score, please enter a non-decimal number between 300 and 850");
+              ga('send','event',
+                'Cards',
+                'applyClickFail',
+                card.name,
+                enteredScore
+              );
+          }
+
+        };
+>>>>>>> 5fe72e4fb598c4647628a54c694d379d3120214f
 
 
 
 
           modalWindow.style.display = "block";
 
-        };
+        //
 
 
       //detailsButton.onclick = "displayCardDetails()";
