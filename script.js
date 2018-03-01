@@ -320,7 +320,7 @@ function populateCardList() {
           );
           sendToAPI( card.id, enteredScore );
         } else {
-          alert( enteredScore + " is not a valid credit score, please enter a non-decimal number between 300 and 850" );
+          alert( "That is not a valid credit score, please enter a non-decimal number between 300 and 850" );
           ga( 'send', 'event',
             'Apply',
             'applyClickFail',
