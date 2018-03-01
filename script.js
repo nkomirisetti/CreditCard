@@ -232,10 +232,10 @@ function populateCardList(){
             document.getElementById("modalNormal").textContent =
             "Normal APR: Non-variable rate at " + card.regular_apr.rate + "%";
           }
-          if (cards.rates_and_fees.length = 1){
-            if(cards.rates_and_fees[0].name == "annual"){
-              if(cards.rates_and_fees[0].fee == 0){
-                document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee"
+          if (card.rates_and_fees.length = 1){
+            if(card.rates_and_fees[0].name == "annual"){
+              if(card.rates_and_fees[0].fee == 0){
+                document.getElementById("modalRates").textContent = "Rates and Fees: No annual fee";
               }
             }
           }
