@@ -249,3 +249,7 @@ function detailsButtonClick() {
     var modalWindow = document.getElementById('modalWindow');
     modalWindow.style.display = "block";
 }
+
+function updateSliderLabel(){
+  document.getElementById('creditScoreLabel').textContent = getCreditScore().toString();
+}
