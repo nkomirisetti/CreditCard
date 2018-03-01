@@ -219,6 +219,7 @@ function populateCardList(){
         card.name
       );
 
+
       //Add info
       var cardInfoList = document.createElement('ul');
       cardInfoList.id = "cardInfoList";
@@ -236,6 +237,10 @@ function populateCardList(){
       detailsButton.onclick = function(){
           eventDetailsClick(card.name);
           var modalWindow = document.getElementById('modalWindow');
+          document.getElementById("modalFeaturesText").innerHTML = "Features:".bold()  + "<br>";
+          for (var i = 0; i < card.features.length; i++){
+            document.getElementById("modalFeaturesText").innerHTML += card.features[i] + "<br>";
+          }
           document.getElementById("modalImage").src = card.image;
           document.getElementById("modalCreditRange").innerHTML = "Credit Score Range: ".bold()
           + card.recommended_credit_scores[0].min
