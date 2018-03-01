@@ -1,4 +1,5 @@
 #cardListAndModal {
+	position: relative;
 	border: 3px solid red;
 	margin: auto;
 }
@@ -91,8 +92,10 @@
 	float:right;
 }
 #sidebar{
+	position: relative;
 	border: 3px solid red;
 	max-width: 10%;
+	min-width: 142px;
 }
 
 aside {
