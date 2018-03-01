@@ -103,16 +103,20 @@ function generalUpdate(){
 
 // particularly updates credit score slider, runs after general update
 function creditScoreUpdate(){
+    // creates new empty array that we will push matches to
     var creditFilteredCards = [];
+    // loops through and pushes matches only
     for (var i = 0; i < this.selectedCreditCards.length; i++){
       if (this.selectedCreditCards[i].recommended_credit_scores[0].min < getCreditScore()){
         creditFilteredCards.push(selectedCreditCards[i]);
       }
     }
+    // sets filtered array to new selected cards array
     this.selectedCreditCards = creditFilteredCards;
     tagUpdate();
 };
 
+// filters based on tags checked
 function tagUpdate(){
   var tagFilteredCards = [];
   var selectedTags = getSelectedTags();
