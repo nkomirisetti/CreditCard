@@ -183,6 +183,7 @@ function sendToAPI( creditCardNumber, creditScore ) {
     } ).then( res => res.json() )
     .catch( error => console.error( 'Error:', error ) )
     .then( response => alert( response.message ) )
+
 }
 
 function populateCardList() {
@@ -372,19 +373,20 @@ window.onload = function() {
 
 function updateCreditScore() {
   document.getElementById( "creditScoreLabel" ).innerHTML = document.getElementById( "slideCreditScore" ).value.toString().bold();
+}
 
-  function updateCreditScore() {
-    document.getElementById( "creditScoreLabel" ).innerHTML = document.getElementById( "slideCreditScore" ).value.toString().bold();
-  }
+function updateCreditScore() {
+  document.getElementById( "creditScoreLabel" ).innerHTML = document.getElementById( "slideCreditScore" ).value.toString().bold();
+}
 
-  function getCurrentMerchant() {
-    return document.getElementById( "selectMerchant" ).value;
-  }
+function getCurrentMerchant() {
+  return document.getElementById( "selectMerchant" ).value;
+}
 
-  function eventDetailsClick( cardname ) {
-    ga( 'send', 'event',
-      'Cards',
-      'detailsClick',
-      cardname
-    );
-  }
+function eventDetailsClick( cardname ) {
+  ga( 'send', 'event',
+    'Cards',
+    'detailsClick',
+    cardname
+  );
+}
