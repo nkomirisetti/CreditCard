@@ -368,10 +368,15 @@ window.onload = function() {
   };
 }
 
+<<<<<<< HEAD
 
 
 function updateCreditScore() {
   document.getElementById( "creditScoreLabel" ).innerHTML = document.getElementById( "slideCreditScore" ).value.toString().bold();
+=======
+function updateCreditScore(){
+  document.getElementById("creditScoreLabel").innerHTML= document.getElementById("slideCreditScore").value.toString().bold();
+>>>>>>> 26f2b07c3fe31a30f6fbd851fc451022701b3620
 }
 
 function getCurrentMerchant() {
