@@ -121,7 +121,7 @@
 
 	background-color: #DDE9ED;
 	border: 3px solid blue;
-	display: block; /*none Hidden by default */
+	display: none; /*none Hidden by default */
     position: fixed; /* Stay in place */
     /*margin: auto;*/
     margin-left: auto; 
